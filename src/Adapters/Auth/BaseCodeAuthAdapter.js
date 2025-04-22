@@ -42,7 +42,9 @@ export default class BaseAuthCodeAdapter extends AuthAdapter {
 
       return;
     }
-
+    if(authData.id) {
+      return;
+    }
     if (!authData?.code) {
       throw new Parse.Error(Parse.Error.VALIDATION_ERROR, `${this.adapterName} code is required.`);
     }
